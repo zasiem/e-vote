@@ -1,0 +1,157 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 25 Nov 2018 pada 13.34
+-- Versi Server: 10.1.24-MariaDB
+-- PHP Version: 7.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `evote`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`username`, `password`) VALUES
+('admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `calon`
+--
+
+CREATE TABLE `calon` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jurusan` varchar(100) NOT NULL,
+  `visi` text NOT NULL,
+  `misi` text NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `hasil` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `calon`
+--
+
+INSERT INTO `calon` (`id`, `nama`, `jurusan`, `visi`, `misi`, `foto`, `hasil`) VALUES
+(1, 'Erza Putra Albasori', 'S1 Teknik Informatika', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. ', 'C:/Users/Ganteng/Downloads/b.jpg', 3),
+(2, 'Ibrahimovic', 'S1 Sistem Informasi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. ', 'C:/Users/Ganteng/Downloads/b.jpg', 0),
+(3, 'Diedra Daffa', 'S1 Sistem Informasi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet nisl eu molestie sodales. Duis posuere enim non magna blandit congue. ', 'C:/Users/Ganteng/Downloads/b.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pemilih`
+--
+
+CREATE TABLE `pemilih` (
+  `nama` varchar(100) NOT NULL,
+  `nim` int(11) NOT NULL,
+  `jurusan` varchar(100) NOT NULL,
+  `ket` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `pemilih`
+--
+
+INSERT INTO `pemilih` (`nama`, `nim`, `jurusan`, `ket`) VALUES
+('DINDA SONIA TIARA', 1202170018, 'S1 Sistem Informasi', 1),
+('TANIA TARYONO', 1202170046, 'S1 Sistem Informasi', 1),
+('ARDISA TSANIYA PUTRI', 1202170080, 'S1 Sistem Informasi', 1),
+('EGA ARDELIA MAHARANI', 1202170108, 'S1 Sistem Informasi', 1),
+('SETYA BUDI P', 1202170168, 'S1 Sistem Informasi', 1),
+('RISKY NOVENDRI', 1202170215, 'S1 Sistem Informasi', 1),
+('SABIL NARARYA', 1202170217, 'S1 Sistem Informasi', 1),
+('NABIL DIRHAM GHIFARY', 1202170242, 'S1 Sistem Informasi', 1),
+('DWI KURNIA', 1202170248, 'S1 Sistem Informasi', 1),
+('ADHYAKSA SETIABUDI', 1202170305, 'S1 Sistem Informasi', 1),
+('JOSE ARMANDO PRATAMA', 1202170323, 'S1 Sistem Informasi', 1),
+('ROBBY ALEXANDER SIHOTANG', 1202170337, 'S1 Sistem Informasi', 1),
+('ERZA PUTRA ALBASORI', 1202171186, 'S1 Sistem Informasi', 1),
+('KUSUMAH ANGGRAITO', 1202172064, 'S1 Sistem Informasi', 1),
+('NOVAL ALTAF', 1202172100, 'S1 Sistem Informasi', 1),
+('MUHAMMAD RIFKI RUSANDI', 1202172230, 'S1 Sistem Informasi', 1),
+('RIZKI AULIA AKBAR LUBIS', 1202173123, 'S1 Sistem Informasi', 1),
+('WIGUNA RAMADHAN', 1202173150, 'S1 Sistem Informasi', 1),
+('MUHAMMAD AXL BAYU PRATAMA', 1202174012, 'S1 Sistem Informasi', 1),
+('HASAN MUHAMMAD DIPOHUTOMO', 1202174028, 'S1 Sistem Informasi', 1),
+('MUFTI ALIE SATRIAWAN', 1202174037, 'S1 Sistem Informasi', 1),
+('SYIFA ANNASTASIA', 1202174048, 'S1 Sistem Informasi', 1),
+('FARHAN HASAN AL-AMUDI', 1202174052, 'S1 Sistem Informasi', 1),
+('YUDHI SATRIO WIBOWO', 1202174076, 'S1 Sistem Informasi', 1),
+('KHAIRUNISAK', 1202174090, 'S1 Sistem Informasi', 1),
+('INDAH FARADHILA PUTRI', 1202174126, 'S1 Sistem Informasi', 1),
+('DANNY NAUFAL PRATAMA', 1202174134, 'S1 Sistem Informasi', 1),
+('NASSYFA ALFIRDA RIANI', 1202174151, 'S1 Sistem Informasi', 1),
+('DEVITA WULANDARI', 1202174157, 'S1 Sistem Informasi', 1),
+('THESAPNA DWI ANGGITA OKVA', 1202174174, 'S1 Sistem Informasi', 1),
+('RAISUL AMIN ZULFIKRI', 1202174181, 'S1 Sistem Informasi', 1),
+('G N KRESNA ADIPUTRA', 1202174195, 'S1 Sistem Informasi', 1),
+('TIARA ADONIA', 1202174204, 'S1 Sistem Informasi', 1),
+('IKA RAHMAYANTI TAMBUNAN', 1202174223, 'S1 Sistem Informasi', 1),
+('JESSY ANUGERAH VINDRAGGET', 1202174255, 'S1 Sistem Informasi', 1),
+('GRACE R SIMANJUNTAK', 1202174269, 'S1 Sistem Informasi', 1),
+('ACHMAD FABIAN AMADEA', 1202174273, 'S1 Sistem Informasi', 1),
+('BAYU REZA PAMUNGKAS', 1202174290, 'S1 Sistem Informasi', 1),
+('CHIKA ENGGAR PUSPITA', 1202174292, 'S1 Sistem Informasi', 1),
+('YUDHA ALFARID', 1202174296, 'S1 Sistem Informasi', 1),
+('SRY INTAN VALENCIA NAINGG', 1202174313, 'S1 Sistem Informasi', 1),
+('ILHAM NURYANTO', 1202174326, 'S1 Sistem Informasi', 1),
+('FATIN HANIFAH', 1202174368, 'S1 Sistem Informasi', 1),
+('MUHAMMAD NAUFAL', 1202174376, 'S1 Sistem Informasi', 1),
+('RAVIV TUANKU ALSAID', 1202174387, 'S1 Sistem Informasi', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `calon`
+--
+ALTER TABLE `calon`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pemilih`
+--
+ALTER TABLE `pemilih`
+  ADD PRIMARY KEY (`nim`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
